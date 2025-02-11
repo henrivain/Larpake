@@ -1,0 +1,173 @@
+body {
+    font-family: Poppins;
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: #5c61a3;
+    color: white;
+    padding: 18px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    height: 64px;
+}
+
+.header h1 {
+    margin-left: -90.5px;
+    font-size: 5x;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.menu-icon {
+    font-size: 32px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 10px;
+    width: 48px;
+    text-align: center;
+    background-color: #494d7b;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+}
+
+#larpake-page-name {
+    text-align: left;
+}
+
+.stats-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+  
+.stats-section h2 {
+  font-size: 1.5rem;
+  color: #4a4a97;
+  margin-bottom: 10px;
+}
+  
+.greeting {
+  font-size: 30px;
+  font-weight: 600;
+  color: #555;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+  
+.stats-list {
+  list-style: none;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+  
+.stats-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+  
+.total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #5c61a3;
+  margin-bottom: 88px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.pagination button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.pagination button:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+/* Side panel styles */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: -270px; /* Initially off-screen to the right */
+    height: 100%;
+    width: 250px;
+    background-color: #787eba;
+    color: white;
+    overflow-y: auto;
+    transition: 0.3s ease;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.side-panel.open {
+    right: 0; /* Slide in from the right */
+}
+
+.side-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-panel ul li {
+    margin: 10px 0;
+    padding: 5px 0;
+    font-size: 1rem;
+}
+
+.side-panel ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.side-panel ul li.active {
+    background-color: #5c61a3;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 660px) {
+    .header h1 {
+      display: none;
+    }
+    .container {
+        margin: 20px 10px;
+    }
+}
