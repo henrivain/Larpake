@@ -16,6 +16,7 @@ import {
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LarpakePage from "./pages/LarpakePage.tsx";
 import OwnStatistics from "./pages/OwnStatistics.tsx";
+import EventMarking from "./pages/EventMarkingFuksi.tsx";
 
 // This should be initialized outside component tree to prevent re-renders
 const msalInstance = new PublicClientApplication(msalConfig);
@@ -77,6 +78,7 @@ root.render(
         <Route path="/" element={<Home />}></Route>
         <Route path="/larpake.html" element={<LarpakePage />}></Route>
         <Route path="/statistics.html" element={<OwnStatistics />}></Route>
+        <Route path="/event_marking.html" element={<EventMarking />}></Route>
     </Routes>
     </BrowserRouter>
     </React.StrictMode>

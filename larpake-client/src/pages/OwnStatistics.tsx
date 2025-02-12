@@ -8,7 +8,7 @@ export default function OwnStatistics(){
         <Header/>
         <SidePanel />
         <div className="container">  
-        <div align="left">Lärpäke / Oma statistiikka</div>
+        <div style={{ textAlign: "left" }}>Lärpäke / Oma statistiikka</div>
         <p className="greeting">Tervehdys arvon fuksi, olet mahtavassa vauhdissa!</p>
         <ul className="stats-list">
             <li>ENSI ASKELEET <span className="stat-value">21 / 49</span></li>
