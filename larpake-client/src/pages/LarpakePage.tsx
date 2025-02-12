@@ -24,17 +24,6 @@ const pages: Page[] = [
   {
     header: "Lärpäke / Ensi askeleet",
     buttons: [
-      "ENSI ASKELEET - OTSIKKO",
-      "TUTUSTUMISILTA 19.8 5P",
-      "KAUPUNKIKÄVELY 3P",
-      "TUTUSTUMISSAUNA 20.8 5P",
-      "PUISTOHENGAILU 3P - PERUUTETTU",
-      "KAMPUSKIERROS 3P"
-    ]
-  },
-  {
-    header: "Lärpäke / Ensi askeleet",
-    buttons: [
       "KÄY PÄÄAINEESI ALOITUSLUENNOLLA 2P",
       "OSALLISTU TREY:N FUKSISUUNNISTUKSEEN 5P",
       "LÄRPÄKKEEN PÄÄLLYSTYS TAI KORISTELU 2P",
@@ -219,36 +208,47 @@ const LarpakePage: React.FC = () => {
     setCurrentPage((prev) => prev + direction);
   };
 
-  const goToPage = (index: number) => {
-    setCurrentPage(index);
-  };
-
   return (
     <div>
       <Header />
       <SidePanel />
       <div className="container">  
-        <div id="larpake-page-name">Lärpäke</div>
+        <div id="larpake-page-name">{pages[currentPage]?.header || "Lärpäke"}</div>
         <div id="larpake-button-container">
           {pages[currentPage]?.buttons.map((buttonText, index) => (
             <div key={index} className="button-wrapper">
-              <button className={buttonText.includes("PERUUTETTU") ? "button disabled" : "button"}>
+              <button
+                className={`button ${
+                  buttonText.includes("PERUUTETTU") ? "disabled" : ""}`}
+                style={{
+                  fontSize: buttonText.includes("OTSIKKO") ? "25px" : "inherit",
+                  visibility: buttonText.includes("TYHJÄ") ? "hidden" : "visible",
+                }}
+                onClick={() => {
+                  if (
+                    !buttonText.includes("PERUUTETTU") &&
+                    !buttonText.includes("OTSIKKO") &&
+                    !buttonText.includes("TYHJÄ")
+                  ) {navigate(`/event_marking.html?eventId=1`);}}}>
                 <div className="button-text">{buttonText.split(" - ")[0]}</div>
                 {buttonText.includes("PERUUTETTU") && (
                   <div className="button-image">PERUUTETTU</div>
                 )}
-                {!buttonText.includes("PERUUTETTU") && !buttonText.includes("OTSIKKO") && !buttonText.includes("TYHJÄ") && (
-                  <div className="button-image">
-                    <img src={getSignatureImage()} alt="" />
-                  </div>
-                )}
+                {buttonText.includes("TYHJÄ") && <div className="button-image"></div>}
+                {!buttonText.includes("PERUUTETTU") &&
+                  !buttonText.includes("OTSIKKO") &&
+                  !buttonText.includes("TYHJÄ") && (
+                    <div className="button-image">
+                      <img src={getSignatureImage()} alt="" />
+                    </div>
+                  )}
               </button>
             </div>
           ))}
         </div>
         <div className="pagination">
-          <button id="prev-page" onClick={() => changePage(-1)} disabled>&lt;</button>
-          <div id="page-info">{`${currentPage + 1} / ${pages.length}`}</div>
+          <button id="prev-page" onClick={() => changePage(-1)} disabled={currentPage === 0}>&lt;</button>
+          <div id="page-info">{`${currentPage + 1} / ${pages.length + 1}`}</div>
           <button id="next-page" onClick={() => changePage(1)}>&gt;</button>
         </div>
       </div>
