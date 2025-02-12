@@ -47,7 +47,7 @@ const pages: Page[] = [
     header: "Lärpäke / Pienen pieni luuppilainen",
     buttons: [
       "OSTA LUUPIN HAALARIMERKKI 2P",
-      "JUTTELE KYYKÄSTÄ DDRNV:N JÄSENEN KANSSA TAI OSTA HAALARIMERKKI 2P",
+      "JUTTELE KYYKÄSTÄ DDRNV:N JÄSENEN KANSSA 2P",
       "OSTA LUUPPI-TUOTE (pl. Luuppi-haalarimekki) 3P",
       "OMPELE 5 HAALARIMERKKIÄ 6P",
       "OSALLISTU KOPO-TAPAHTUMAAN 5P",
